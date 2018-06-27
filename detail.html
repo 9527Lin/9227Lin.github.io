@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详情</title>
+    <style>
+        html {
+            background-color: #eeeeec;
+        }
+
+        body,
+        p {
+            margin: 0
+        }
+
+        .content {
+            width: 88vw;
+            margin: 6vw;
+            /* background-color: aquamarine; */
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            width: 100%;
+            font-size: 6vw;
+            margin-bottom: 2vw;
+        }
+
+        .image {
+            margin-bottom: 2vw;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        .description {
+            width: 100%;
+            font-size: 5vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">
+            <p>集团概况-保集地产</p>
+        </div>
+        <div class="image">
+            <img id="img" src="">
+        </div>
+        <div class="description">
+            <p>ECMAScript是一种由Ecma国际（前身为欧洲计算机制造商协会, 英文名称是European Computer Manufacturers Association） 通过ECMA-262标准化的脚本程序设计语言。这种语言在万维网上应用广泛，
+                它往往被称为JavaScript或JS，但实际上后两者是ECMA-262标准的实现和扩展。 本套《ECMAScript 6 入门》教程由阮一峰老师所著，全面介绍 ECMAScript 6 新引入的语法特性。 本ES6教程覆盖
+                与上一个版本 ES5 的所有不同之处，对涉及的语法知识给予详细介绍，并给出大量简洁易懂的示例代码。 本ES6教程为中级难度，适合已经掌握 ES5 的读者，用来了解这门语言的最新发展；也可当作参考手册，查寻新增的语法点。
+                纸质书籍与本套教程内容基本一致，但是愿意支持阮一峰老师的同学，可以购买书纸质书籍.
+            </p>
+        </div>
+    </div>
+    <script>
+        (function () {
+            let imgArr = ['http://39.108.238.163:10008/file/banner/jhdmarket.jpg', 'http://39.108.238.163:10008/file/banner/001.jpg', 'http://39.108.238.163:10008/file/banner/003.jpg', 'http://39.108.238.163:10008/file/banner/bigqnew.jpg']
+            // console.log(getUrlParam('imgIndex'));
+            
+            document.getElementById('img').setAttribute('src', imgArr[parseInt(getUrlParam('imgIndex'))])
+        })()
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }</script>
+</body>
+
+</html>
